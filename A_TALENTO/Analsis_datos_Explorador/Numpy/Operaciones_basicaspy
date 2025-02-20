@@ -1,0 +1,47 @@
+# Importar el módulo numpy
+import numpy as np
+
+# Crear un arreglo numpy
+array1 = np.array([1, 2, 3, 4, 5])
+print("Arreglo 1:", array1)
+
+# Crear otro arreglo numpy
+array2 = np.array([10, 20, 30, 40, 50])
+print("Arreglo 2:", array2)
+
+# Operaciones aritméticas básicas
+suma = array1 + array2
+print("Suma:", suma)
+
+resta = array1 - array2
+print("Resta:", resta)
+
+multiplicacion = array1 * array2
+print("Multiplicación:", multiplicacion)
+
+division = array1 / array2
+print("División:", division)
+
+
+
+
+
+
+
+# Funciones de numpy
+media = np.mean(array1)
+print("Media de array1:", media)
+
+desviacion_estandar = np.std(array1)
+print("Desviación estándar de array1:", desviacion_estandar)
+
+
+
+# Crear una matriz de 2x3
+matriz = np.array([[1, 2, 3], [4, 5, 6]])
+print("Matriz:\n", matriz)
+
+# Transpuesta de la matriz
+transpuesta = np.transpose(matriz)
+print("Transpuesta de la matriz:\n", transpuesta)
+

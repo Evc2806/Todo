@@ -1,0 +1,12 @@
+# prompt: calcula de la suma de n numeros con estructura while
+
+n = int(input("Ingresa la cantidad de números a sumar: "))
+suma = 0
+i = 1
+
+while i <= n:
+  numero = float(input(f"Ingresa el número {i}: "))
+  suma += numero
+  i += 1
+
+print("La suma de los números es:", suma)

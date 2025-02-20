@@ -1,0 +1,6 @@
+def suma(a,b):
+    resultado=a+b
+    print("El resultado de la suma es",resultado)
+    
+suma(1,3)
+    

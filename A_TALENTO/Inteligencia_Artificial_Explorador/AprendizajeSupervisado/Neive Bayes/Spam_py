@@ -1,0 +1,56 @@
+# Importamos las librerías necesarias
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import accuracy_score, classification_report
+
+# Generamos datos de ejemplo (reemplaza esto con tus datos reales si tienes)
+# Estos datos son solo para ilustrar la creación de un clasificador
+# en un escenario real, necesitas datos reales para obtener un buen modelo
+n_samples = 1000
+emails = []
+labels = []
+
+for i in range(n_samples // 2):
+  # Simulamos un correo spam
+  emails.append("Oferta increible! Ganaste un millon de dolares. Haz click aqui.")
+  labels.append(1) # 1 representa spam
+  
+for i in range(n_samples // 2):
+  # Simulamos un correo no spam
+  emails.append("Hola, como estas? Te queria comentar sobre...")
+  labels.append(0) # 0 representa no spam
+
+
+# Convertimos el texto a vectores numéricos utilizando CountVectorizer
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(emails)
+
+# Separamos los datos en conjuntos de entrenamiento y prueba
+X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
+
+# Creamos un clasificador Naive Bayes
+naive_bayes = MultinomialNB()
+
+# Entrenamos el modelo con los datos de entrenamiento
+naive_bayes.fit(X_train, y_train)
+
+# Realizamos predicciones en los datos de prueba
+y_pred = naive_bayes.predict(X_test)
+
+# Evaluamos la precisión del modelo
+precision = accuracy_score(y_test, y_pred)
+print(f"Precisión del modelo: {precision}")
+print(classification_report(y_test, y_pred))
+
+
+#Ejemplo de predicción
+nuevo_correo = ["Oferta increible! Ganaste un premio."] # correo de prueba
+nuevo_correo_vectorizado = vectorizer.transform(nuevo_correo)
+prediccion = naive_bayes.predict(nuevo_correo_vectorizado)
+
+if prediccion[0] == 1:
+    print(f"El correo '{nuevo_correo[0]}' es SPAM.")
+else:
+    print(f"El correo '{nuevo_correo[0]}' NO es SPAM.")

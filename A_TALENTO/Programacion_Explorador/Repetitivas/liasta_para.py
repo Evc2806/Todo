@@ -1,0 +1,4 @@
+# Imprimir los elementos de una lista
+frutas = ["manzana", "banana", "naranja"]
+for fruta in frutas:
+    print(fruta)

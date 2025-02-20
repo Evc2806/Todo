@@ -1,0 +1,53 @@
+# Clase base Vehiculo
+class Vehiculo:
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+
+    def mostrar_informacion(self):
+        print(f"Marca: {self.marca}, Modelo: {self.modelo}, Año: {self.año}")
+
+    def arrancar(self):
+        print("El vehículo está arrancando.")
+
+
+
+class Coche(Vehiculo):
+    def __init__(self, marca, modelo, año, puertas):
+        # Llamamos al constructor de la superclase
+        super().__init__(marca, modelo, año)
+        self.puertas = puertas
+
+    def arrancar(self):
+        # Sobrescribimos el método arrancar de la clase base
+        print(f"El coche está arrancando con sus {self.puertas} puertas cerradas.")
+
+
+
+class Motocicleta(Vehiculo):
+    def __init__(self, marca, modelo, año, cilindrada):
+        # Llamamos al constructor de la superclase
+        super().__init__(marca, modelo, año)
+        self.cilindrada = cilindrada
+
+    def arrancar(self):
+        # Sobrescribimos el método arrancar de la clase base
+        print(f"La motocicleta está arrancando, ¡ten cuidado! Cilindrada: {self.cilindrada}cc.")
+
+
+# Crear objetos de cada clase
+mi_coche = Coche("Toyota", "Corolla", 2020, 4)
+mi_moto = Motocicleta("Honda", "CBR500R", 2023, 500)
+
+# Mostrar la información de los vehículos
+print("Información del Coche:")
+mi_coche.mostrar_informacion()  # Imprime: Marca, Modelo, Año
+print("\nInformación de la Motocicleta:")
+mi_moto.mostrar_informacion()  # Imprime: Marca, Modelo, Año
+
+# Llamar al método arrancar de cada vehículo
+print("\nArrancando el Coche:")
+mi_coche.arrancar()  # Imprime: El coche está arrancando con sus 4 puertas cerradas.
+print("\nArrancando la Motocicleta:")
+mi_moto.arrancar()  # Imprime: La motocicleta está arrancando, ¡ten cuidado! Cilindrada: 500cc.

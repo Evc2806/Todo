@@ -1,0 +1,20 @@
+
+import array
+
+#nombres=array.array('u',["a","n","a"," ","j","u","a","n"])
+#print(nombres)
+
+
+# Definir un arreglo de caracteres Unicode
+#nombres = array.array('u', ['A', 'n', 'a', 'B', 'o', 'b'])
+
+import array
+
+# Definir un arreglo de cadenas de caracteres
+cadena = array.array('u', ['Hola', 'Mundo', '123'])
+
+# Imprimir el arreglo completo
+print(''.join(cadena))
+
+
+
