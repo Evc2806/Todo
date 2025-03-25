@@ -3,5 +3,3 @@
 
 datos_mixtos = [10, "Hola", 3.14, True]
 print(datos_mixtos)
-datos_mixtos [2]=67
-print(datos_mixtos)
