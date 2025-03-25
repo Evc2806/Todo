@@ -1,4 +1,4 @@
-# Definir una lista de cadenas de texto
+# Definir una lista de cadenas de texto e imprimir cada nosmbre con mayúscula
 
 
 
